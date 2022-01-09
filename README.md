@@ -17,3 +17,9 @@ This little app can improve your gameplay experience by allowing you to:
 [Discord Server](https://discord.gg/TrHtNygusw)
 
 [Latest Release](https://github.com/afonsosousah/fs22companion/releases/latest)
+
+
+## Copyright
+
+Copyright afonsosousah
+You are not allowed to modify this piece of software, but you are free to share and create content about it!
