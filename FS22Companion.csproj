@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <ApplicationIcon>FS22Companion.ico</ApplicationIcon>
+    <Authors>afonsosousah</Authors>
+    <Description>Trainer/Companion for Farming Simulator 22</Description>
+    <RepositoryUrl>https://github.com/afonsosousah/fs22companion</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\FontAwesome.Sharp.dll" />
+    <None Remove="Resources\Guna.UI2.dll" />
+    <None Remove="Resources\helvetica_light.ttf" />
+    <None Remove="Resources\memory.dll" />
+    <None Remove="Resources\Newtonsoft.Json.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="5.15.4" />
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.2.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FontAwesome.Sharp.dll" />
+    <EmbeddedResource Include="Resources\Guna.UI2.dll" />
+    <EmbeddedResource Include="Resources\helvetica_light.ttf" />
+    <EmbeddedResource Include="Resources\memory.dll" />
+    <EmbeddedResource Include="Resources\Newtonsoft.Json.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="memory">
+      <HintPath>Resources\memory.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
