@@ -22,4 +22,5 @@ This little app can improve your gameplay experience by allowing you to:
 ## Copyright
 
 Copyright afonsosousah
+
 You are not allowed to modify this piece of software, but you are free to share and create content about it!
