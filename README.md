@@ -1,4 +1,4 @@
-![FS22Companion](https://github.com/afonsosousah/fs22companion/raw/main/Media/GitHubBanner.png)
+# ![FS22Companion](https://github.com/afonsosousah/fs22companion/raw/main/Media/GitHubBanner.png)
 
 [![Github All Releases](https://img.shields.io/github/downloads/afonsosousah/fs22companion/total.svg)]()
 [![Discord](https://img.shields.io/discord/929552539811197008.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/TrHtNygusw)
