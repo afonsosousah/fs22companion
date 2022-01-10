@@ -9,8 +9,11 @@ This little app can improve your gameplay experience by allowing you to:
 - Keep aligned to a direction (like GPS Mod and works on server even without the mod!)
 
 
-## Screenshots
-![enter image description here](https://github.com/afonsosousah/fs22companion/raw/main/Media/Home.png)
+## Showcase
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=GfyNP8-Wbfg"><img width="100%" height="505" src="https://i.imgur.com/90iq93Q.png" alt="FS22Companion - Showcase"></a>
+</div>
 
 
 # Links
