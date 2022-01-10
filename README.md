@@ -8,11 +8,6 @@ This little app can improve your gameplay experience by allowing you to:
 - Change Time Scale, Time of Day, Seasons and Months 
 - Keep aligned to a direction (like GPS Mod and works on server even without the mod!)
 
-## Showcase
-<p align="center">
-	<iframe width="100%" height="505" src="https://www.youtube.com/embed/GfyNP8-Wbfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-
 
 ## Screenshots
 ![enter image description here](https://github.com/afonsosousah/fs22companion/raw/main/Media/Home.png)
