@@ -206,15 +206,53 @@ namespace FS22Companion
                 double direction;
                 bool previousIsInVehicle = false;
                 bool isInVehicle = false;
+                bool snapDirection = true;
 
                 activateGPSButton.Click += (sender, e) =>
                 {
-                    GPSactive = true;
+                    if(GPSactive)
+                    {
+                        GPSactive = false;
+                        System.Media.SoundPlayer snd = new System.Media.SoundPlayer(Properties.Resources.gs_deactivate);
+                        snd.Play();
+                        activateGPSButton.Text = "Activate";
+                    }
+                    else if(!GPSactive)
+                    {
+                        GPSactive = true;
+                        System.Media.SoundPlayer snd = new System.Media.SoundPlayer(Properties.Resources.gs_activate);
+                        snd.Play();
+                        activateGPSButton.Text = "Deactivate";
+                    }
                 };
 
-                deactivateGPSButton.Click += (sender, e) =>
+                snapDirectionCheckBox.CheckedChanged += (sender, e) =>
                 {
-                    GPSactive = false;
+                    snapDirection = snapDirectionCheckBox.Checked;
+                };
+
+                plus90Button.Click += (sender, e) =>
+                {
+                    var newDirection = Double.Parse(directionTextBox.Text) + 90.0;
+                    if (newDirection > 360)
+                        newDirection = newDirection - 360;
+                    directionTextBox.Text = newDirection.ToString("0.0");
+                };
+
+                plus180Button.Click += (sender, e) =>
+                {
+                    var newDirection = Double.Parse(directionTextBox.Text) + 180.0;
+                    if (newDirection > 360)
+                        newDirection = newDirection - 360;
+                    directionTextBox.Text = newDirection.ToString("0.0");
+                };
+
+                plus270Button.Click += (sender, e) =>
+                {
+                    var newDirection = Double.Parse(directionTextBox.Text) + 270.0;
+                    if (newDirection > 360)
+                        newDirection = newDirection - 360;
+                    directionTextBox.Text = newDirection.ToString("0.0");
                 };
 
                 isInVehicleTimer.Tick += (sender, e) =>
@@ -256,13 +294,25 @@ namespace FS22Companion
                         if (direction < 0) direction = -direction;                            // normalize the angle
                         direction = 360 - direction;
                         directionLabel.Text = "Current Direction: " + (direction).ToString("0.0") + "º";
-
+                        var GPSDirection = Double.Parse(directionTextBox.Text);
                         axisSideAddress = ReadInt64(globalArray + 0x90);
 
-                        if(GPSactive)
+                        if(snapDirection)
                         {
-                            var GPSDirection = Double.Parse(directionTextBox.Text);
+                            if (45 <= direction && direction < 135)
+                                GPSDirection = 90.0;
+                            if (135 <= direction && direction < 225)
+                                GPSDirection = 180.0;
+                            if (225 <= direction && direction < 315)
+                                GPSDirection = 270.0;
+                            if ((315 <= direction && direction <= 360) || (0 <= direction && direction < 45))
+                                GPSDirection = 360.0;
+                            if (!directionTextBox.Focused && directionTextBox.Text != GPSDirection.ToString("0.0"))
+                                directionTextBox.Text = GPSDirection.ToString("0.0");
+                        }
 
+                        if (GPSactive)
+                        {
                             if (GPSDirection != direction)
                             {
                                 if(GPSDirection > direction && GPSDirection - direction <= 180)
@@ -304,11 +354,17 @@ namespace FS22Companion
 
         public void steer(bool left, long axisSideAddress, double GPSDirection, double direction)
         {
-            if((direction >= 359.9 || direction <= 0.1) && (System.Math.Abs(GPSDirection - direction) <= 0.5 || (359.9 <= System.Math.Abs(GPSDirection - direction) && System.Math.Abs(GPSDirection - direction) <= 360.0)))
+            if(direction >= 359 || direction <= 1) // Offset it so that it doesn't bug out near the 360 degrees
             {
-                // Don't steer
+                if (direction <= 1)
+                    direction = direction + 360;
+                if (GPSDirection <= 1)
+                    GPSDirection = GPSDirection + 360;
+                direction = direction - 90;
+                GPSDirection = GPSDirection - 90;
             }
-            else if (System.Math.Abs(GPSDirection - direction) <= 0.1)
+           
+            if (System.Math.Abs(GPSDirection - direction) <= 0.1)
             {
                 var steerPercentage = 0.02;
                 if (left) steerPercentage = -0.02;
@@ -751,30 +807,30 @@ namespace FS22Companion
 
         public void DisableScript()
         {
-            baseAddress = (long)process.MainModule.BaseAddress + 0x8EDD2;
-
-            if (baseAddress == 0 || newmem == 0)
-            {
-                CustomMessageBox.Show("The script was not disabled!", MessageBoxButtons.OK);
-                return;
-            }
-
-            byte[] originalbytes = { 0x4D, 0x8B, 0x1A, 0x49, 0x83, 0xFB, 0xFF };
-
-            IntPtr bytes;
-
             if (Process.GetProcessesByName("FarmingSimulator2022Game").Length > 0)
             {
+                baseAddress = (long)process.MainModule.BaseAddress + 0x8EDD2;
+
+                if (baseAddress == 0 || newmem == 0)
+                {
+                    CustomMessageBox.Show("The script was not disabled!", MessageBoxButtons.OK);
+                    return;
+                }
+
+                byte[] originalbytes = { 0x4D, 0x8B, 0x1A, 0x49, 0x83, 0xFB, 0xFF };
+
+                IntPtr bytes;
+
                 WriteProcessMemory(process.Handle, baseAddress, originalbytes, originalbytes.Length, out bytes);
-            }
 
-            var successDeallocating = Dealloc(process.Handle, newmem);
+                var successDeallocating = Dealloc(process.Handle, newmem);
 
-            if (!successDeallocating)
-            {
-                int error = Marshal.GetLastWin32Error();
-                CustomMessageBox.Show("Deallocation failed. Error code: " + error.ToString(), MessageBoxButtons.OK);
-                return;
+                if (!successDeallocating)
+                {
+                    int error = Marshal.GetLastWin32Error();
+                    CustomMessageBox.Show("Deallocation failed. Error code: " + error.ToString(), MessageBoxButtons.OK);
+                    return;
+                }
             }
         }
 

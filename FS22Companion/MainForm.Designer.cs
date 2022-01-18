@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidePanel = new System.Windows.Forms.Panel();
-            this.pagePanel = new System.Windows.Forms.Panel();
+            this.gameSaveManagerButton = new FontAwesome.Sharp.IconButton();
             this.homeButton = new FontAwesome.Sharp.IconButton();
             this.exitButton = new FontAwesome.Sharp.IconButton();
             this.settingsButton = new FontAwesome.Sharp.IconButton();
             this.pricesTableButton = new FontAwesome.Sharp.IconButton();
             this.menuButton = new FontAwesome.Sharp.IconButton();
+            this.pagePanel = new System.Windows.Forms.Panel();
             this.sidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.sidePanel.Controls.Add(this.gameSaveManagerButton);
             this.sidePanel.Controls.Add(this.homeButton);
             this.sidePanel.Controls.Add(this.exitButton);
             this.sidePanel.Controls.Add(this.settingsButton);
@@ -50,16 +52,23 @@
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(74, 390);
+            this.sidePanel.Size = new System.Drawing.Size(74, 470);
             this.sidePanel.TabIndex = 0;
             // 
-            // pagePanel
+            // gameSaveManagerButton
             // 
-            this.pagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pagePanel.Location = new System.Drawing.Point(74, 0);
-            this.pagePanel.Name = "pagePanel";
-            this.pagePanel.Size = new System.Drawing.Size(612, 390);
-            this.pagePanel.TabIndex = 1;
+            this.gameSaveManagerButton.FlatAppearance.BorderSize = 0;
+            this.gameSaveManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gameSaveManagerButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.gameSaveManagerButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
+            this.gameSaveManagerButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.gameSaveManagerButton.IconSize = 43;
+            this.gameSaveManagerButton.Location = new System.Drawing.Point(-3, 157);
+            this.gameSaveManagerButton.Name = "gameSaveManagerButton";
+            this.gameSaveManagerButton.Size = new System.Drawing.Size(80, 80);
+            this.gameSaveManagerButton.TabIndex = 8;
+            this.gameSaveManagerButton.UseVisualStyleBackColor = true;
+            this.gameSaveManagerButton.Click += new System.EventHandler(this.gameSaveManagerButton_Click);
             // 
             // homeButton
             // 
@@ -84,7 +93,7 @@
             this.exitButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.exitButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.exitButton.IconSize = 43;
-            this.exitButton.Location = new System.Drawing.Point(-3, 315);
+            this.exitButton.Location = new System.Drawing.Point(-3, 391);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(80, 80);
             this.exitButton.TabIndex = 6;
@@ -99,7 +108,7 @@
             this.settingsButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.settingsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.settingsButton.IconSize = 43;
-            this.settingsButton.Location = new System.Drawing.Point(-3, 236);
+            this.settingsButton.Location = new System.Drawing.Point(-3, 312);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(80, 80);
             this.settingsButton.TabIndex = 5;
@@ -114,7 +123,7 @@
             this.pricesTableButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.pricesTableButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pricesTableButton.IconSize = 43;
-            this.pricesTableButton.Location = new System.Drawing.Point(-3, 157);
+            this.pricesTableButton.Location = new System.Drawing.Point(-3, 233);
             this.pricesTableButton.Name = "pricesTableButton";
             this.pricesTableButton.Size = new System.Drawing.Size(80, 80);
             this.pricesTableButton.TabIndex = 4;
@@ -136,12 +145,20 @@
             this.menuButton.UseVisualStyleBackColor = true;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
+            // pagePanel
+            // 
+            this.pagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pagePanel.Location = new System.Drawing.Point(74, 0);
+            this.pagePanel.Name = "pagePanel";
+            this.pagePanel.Size = new System.Drawing.Size(612, 470);
+            this.pagePanel.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(686, 470);
             this.Controls.Add(this.pagePanel);
             this.Controls.Add(this.sidePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -162,6 +179,7 @@
         private FontAwesome.Sharp.IconButton exitButton;
         private FontAwesome.Sharp.IconButton settingsButton;
         private FontAwesome.Sharp.IconButton homeButton;
+        private FontAwesome.Sharp.IconButton gameSaveManagerButton;
     }
 }
 

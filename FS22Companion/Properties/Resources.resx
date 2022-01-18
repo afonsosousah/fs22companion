@@ -124,6 +124,12 @@
   <data name="fontawesome_webfont" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fontawesome-webfont.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="gs_activate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gs_activate.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gs_deactivate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gs_deactivate.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Guna_UI2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Guna.UI2.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -141,5 +147,8 @@
   </data>
   <data name="Newtonsoft_Json" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Newtonsoft.Json.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Octokit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Octokit.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

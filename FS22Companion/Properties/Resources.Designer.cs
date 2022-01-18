@@ -81,6 +81,24 @@ namespace FS22Companion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gs_activate {
+            get {
+                return ResourceManager.GetStream("gs_activate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gs_deactivate {
+            get {
+                return ResourceManager.GetStream("gs_deactivate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Guna_UI2 {
@@ -136,6 +154,16 @@ namespace FS22Companion.Properties {
         internal static byte[] Newtonsoft_Json {
             get {
                 object obj = ResourceManager.GetObject("Newtonsoft_Json", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Octokit {
+            get {
+                object obj = ResourceManager.GetObject("Octokit", resourceCulture);
                 return ((byte[])(obj));
             }
         }

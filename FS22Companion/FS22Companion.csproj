@@ -17,6 +17,7 @@
     <None Remove="Resources\helvetica_light.ttf" />
     <None Remove="Resources\memory.dll" />
     <None Remove="Resources\Newtonsoft.Json.dll" />
+    <None Remove="Resources\Octokit.dll" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -36,8 +42,9 @@
 
   <ItemGroup>
     <PackageReference Include="FontAwesome.Sharp" Version="5.15.4" />
-    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.2.7" />
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.2.8" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Octokit" Version="0.50.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,12 +53,20 @@
     <EmbeddedResource Include="Resources\helvetica_light.ttf" />
     <EmbeddedResource Include="Resources\memory.dll" />
     <EmbeddedResource Include="Resources\Newtonsoft.Json.dll" />
+    <EmbeddedResource Include="Resources\Octokit.dll" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="memory">
       <HintPath>Resources\memory.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

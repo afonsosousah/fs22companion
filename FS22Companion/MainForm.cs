@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
 using System.Diagnostics;
+using Octokit;
 
 namespace FS22Companion
 {
@@ -26,27 +27,48 @@ namespace FS22Companion
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
+
         public Form currentForm;
         Home home = new Home();
         Menu menu = null;
+        GameSettingsManager gameSettingsManager = new GameSettingsManager();
         PricesTable pricesTable = new PricesTable();
         Settings settings = new Settings();
         IconButton selectedButton;
+
+        string version = "1.1.0";
 
         public MainForm()
         {
             InitializeComponent();
             sidePanel.MouseMove += dragabbleElement_MouseMove;
             pagePanel.MouseMove += dragabbleElement_MouseMove;
-            //iconPictureBox.MouseMove += dragabbleElement_MouseMove;
+            home.label1.MouseMove += dragabbleElement_MouseMove;
+            gameSettingsManager.settingPanel.MouseMove += dragabbleElement_MouseMove;
+
+            // Check for updates
+            CheckVersion();
 
             this.FormClosing += (sender, e) =>
             {
                 if (menu != null && menu.newmem != 0) // checks if the script has been ran
-                {
+                {;
                     menu.DisableScript();
                 }
             };
+
+            // Game Settings Path
+            if (Properties.Settings.Default.GameSettingsPath.Length == 0)
+            {
+                Properties.Settings.Default.GameSettingsPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents\\My Games\\FarmingSimulator2022";
+            }
+            settings.gameSettingsFolderTextBox.Text = Properties.Settings.Default.GameSettingsPath;
+            settings.gameSettingsFolderTextBox.Select(settings.gameSettingsFolderTextBox.Text.Length, 0);
+
+            RegisterHotKey(this.Handle, 1, Constants.NOMOD, (int)Keys.Insert);
+            RegisterHotKey(this.Handle, 2, Constants.CTRL, (int)Keys.Q);
 
             if (Process.GetProcessesByName("FarmingSimulator2022Game").Length > 0)
             {
@@ -66,9 +88,6 @@ namespace FS22Companion
                 else if (!this.TopMost)
                     this.TopMost = true;
             };
-
-            LoadForm(home, pagePanel, homeButton);
-            home.label1.MouseMove += dragabbleElement_MouseMove;
 
             foreach (Control control in sidePanel.Controls)
             {
@@ -93,6 +112,45 @@ namespace FS22Companion
             }
 
             MemoryFonts.AddMemoryFont(Properties.Resources.helvetica_light);
+
+            LoadForm(home, pagePanel, homeButton);
+        }
+
+        private void HandleHotkey1()
+        {
+
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x0312)
+            {
+                int id = m.WParam.ToInt32();
+
+                switch (id)
+                {
+                    case 1:
+                        if (this.Visible && this.TopMost)
+                        {
+                            this.TopMost = false;
+                            this.SendToBack();
+                            this.WindowState = FormWindowState.Minimized;
+                        }
+                        else
+                        {
+                            this.TopMost = true;
+                            this.Show();
+                            this.WindowState = FormWindowState.Normal;
+                            this.Focus();
+                        }
+                        break;
+                    case 2:
+                        menu.activateGPSButton.PerformClick();
+                        break;
+                }
+            }
+
+            base.WndProc(ref m);
         }
 
         private void LoadForm(Form form, Panel panel, IconButton button)
@@ -106,6 +164,32 @@ namespace FS22Companion
             currentForm = form;
             form.MouseMove += dragabbleElement_MouseMove;
             SelectedButton(button);
+        }
+
+        public async void CheckVersion()
+        {
+            GitHubClient client = new GitHubClient(new ProductHeaderValue("afonsosousah"));
+            IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("afonsosousah", "fs22companion");
+
+            //Setup the versions
+            Version latestGitHubVersion = new Version(releases[0].TagName);
+            Version localVersion = new Version(version);
+
+            int versionComparison = localVersion.CompareTo(latestGitHubVersion);
+            if (versionComparison < 0)
+            {
+                //The version on GitHub is more up to date than this local release.
+                CustomMessageBox.Show("There is a newer version available on GitHub!", MessageBoxButtons.OK);
+            }
+            else if (versionComparison > 0)
+            {
+                //This local version is greater than the release version on GitHub.
+                CustomMessageBox.Show("This is a beta build!", MessageBoxButtons.OK);
+            }
+            else
+            {
+                //This local Version and the Version on GitHub are equal.
+            }
         }
 
         private void SelectedButton(IconButton button)
@@ -164,6 +248,11 @@ namespace FS22Companion
             }
         }
 
+        private void gameSaveManagerButton_Click(object sender, EventArgs e)
+        {
+            LoadForm(gameSettingsManager, pagePanel, gameSaveManagerButton);
+        }
+
         private void pricesTableButton_Click(object sender, EventArgs e)
         {
             LoadForm(pricesTable, pagePanel, pricesTableButton);
@@ -179,4 +268,20 @@ namespace FS22Companion
             this.Close();
         }
     }
+
+
+    public static class Constants
+    {
+        //modifiers
+        public const int NOMOD = 0x0000;
+        public const int ALT = 0x0001;
+        public const int CTRL = 0x0002;
+        public const int SHIFT = 0x0004;
+        public const int WIN = 0x0008;
+
+
+        //windows message id for hotkey
+        public const int WM_HOTKEY_MSG_ID = 0x0312;
+    }
+
 }

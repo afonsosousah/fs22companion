@@ -35,11 +35,11 @@ namespace FS22Companion
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.difficultyLabel = new System.Windows.Forms.Label();
+            this.difficultyButtonRight = new FontAwesome.Sharp.IconButton();
+            this.difficultyButtonLeft = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.tableScrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.difficultyButtonRight = new FontAwesome.Sharp.IconButton();
-            this.difficultyButtonLeft = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +88,7 @@ namespace FS22Companion
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(367, 347);
+            this.dataGridView1.Size = new System.Drawing.Size(367, 425);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -112,49 +112,6 @@ namespace FS22Companion
             this.difficultyLabel.TabIndex = 2;
             this.difficultyLabel.Text = "Easy";
             this.difficultyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12.5F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(421, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 35);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Economic Difficulty";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableScrollBar
-            // 
-            this.tableScrollBar.AutoRoundedCorners = true;
-            this.tableScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(81)))), ((int)(((byte)(96)))));
-            this.tableScrollBar.BorderRadius = 4;
-            this.tableScrollBar.FillColor = System.Drawing.Color.Transparent;
-            this.tableScrollBar.HoverState.Parent = null;
-            this.tableScrollBar.InUpdate = false;
-            this.tableScrollBar.LargeChange = 10;
-            this.tableScrollBar.Location = new System.Drawing.Point(394, 21);
-            this.tableScrollBar.Maximum = 48;
-            this.tableScrollBar.Name = "tableScrollBar";
-            this.tableScrollBar.PressedState.Parent = this.tableScrollBar;
-            this.tableScrollBar.ScrollbarSize = 10;
-            this.tableScrollBar.Size = new System.Drawing.Size(10, 347);
-            this.tableScrollBar.TabIndex = 4;
-            this.tableScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.tableScrollBar.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
-            this.tableScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tableScrollBar_Scroll);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(421, 335);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(171, 33);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Credits to u/Edigorin";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // difficultyButtonRight
             // 
@@ -193,12 +150,55 @@ namespace FS22Companion
             this.difficultyButtonLeft.UseVisualStyleBackColor = false;
             this.difficultyButtonLeft.Click += new System.EventHandler(this.difficultyButtonLeft_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12.5F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(421, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 35);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Economic Difficulty";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableScrollBar
+            // 
+            this.tableScrollBar.AutoRoundedCorners = true;
+            this.tableScrollBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(81)))), ((int)(((byte)(96)))));
+            this.tableScrollBar.BorderRadius = 4;
+            this.tableScrollBar.FillColor = System.Drawing.Color.Transparent;
+            this.tableScrollBar.HoverState.Parent = null;
+            this.tableScrollBar.InUpdate = false;
+            this.tableScrollBar.LargeChange = 10;
+            this.tableScrollBar.Location = new System.Drawing.Point(394, 21);
+            this.tableScrollBar.Maximum = 48;
+            this.tableScrollBar.Name = "tableScrollBar";
+            this.tableScrollBar.PressedState.Parent = this.tableScrollBar;
+            this.tableScrollBar.ScrollbarSize = 10;
+            this.tableScrollBar.Size = new System.Drawing.Size(10, 425);
+            this.tableScrollBar.TabIndex = 4;
+            this.tableScrollBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.tableScrollBar.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            this.tableScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tableScrollBar_Scroll);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(421, 413);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label2.Size = new System.Drawing.Size(171, 33);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Credits to u/Edigorin";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // PricesTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(612, 390);
+            this.ClientSize = new System.Drawing.Size(612, 470);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tableScrollBar);
             this.Controls.Add(this.label1);

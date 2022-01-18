@@ -48,15 +48,18 @@ namespace FS22Companion
             this.monthLabel = new System.Windows.Forms.Label();
             this.monthComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gpsTab = new System.Windows.Forms.TabPage();
+            this.snapDirectionCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.plus270Button = new Guna.UI2.WinForms.Guna2Button();
+            this.plus180Button = new Guna.UI2.WinForms.Guna2Button();
+            this.plus90Button = new Guna.UI2.WinForms.Guna2Button();
+            this.gpsActiveButton = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.directionLabel = new System.Windows.Forms.Label();
             this.isInVehicleButton = new Guna.UI2.WinForms.Guna2Button();
-            this.deactivateGPSButton = new Guna.UI2.WinForms.Guna2Button();
             this.activateGPSButton = new Guna.UI2.WinForms.Guna2Button();
             this.directionTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.gpsTimer = new System.Windows.Forms.Timer(this.components);
             this.isInVehicleTimer = new System.Windows.Forms.Timer(this.components);
-            this.gpsActiveButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.moneyTab.SuspendLayout();
             this.timeTime.SuspendLayout();
@@ -87,10 +90,10 @@ namespace FS22Companion
             this.removeMoneyButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.removeMoneyButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.removeMoneyButton.HoverState.Parent = this.removeMoneyButton;
-            this.removeMoneyButton.Location = new System.Drawing.Point(472, 151);
+            this.removeMoneyButton.Location = new System.Drawing.Point(296, 230);
             this.removeMoneyButton.Name = "removeMoneyButton";
             this.removeMoneyButton.ShadowDecoration.Parent = this.removeMoneyButton;
-            this.removeMoneyButton.Size = new System.Drawing.Size(87, 29);
+            this.removeMoneyButton.Size = new System.Drawing.Size(118, 29);
             this.removeMoneyButton.TabIndex = 9;
             this.removeMoneyButton.Text = "Remove";
             // 
@@ -112,7 +115,7 @@ namespace FS22Companion
             this.moneyTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.moneyTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.moneyTextBox.HoverState.Parent = this.moneyTextBox;
-            this.moneyTextBox.Location = new System.Drawing.Point(39, 150);
+            this.moneyTextBox.Location = new System.Drawing.Point(174, 143);
             this.moneyTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.moneyTextBox.Name = "moneyTextBox";
             this.moneyTextBox.PasswordChar = '\0';
@@ -141,10 +144,10 @@ namespace FS22Companion
             this.addMoneyButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.addMoneyButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.addMoneyButton.HoverState.Parent = this.addMoneyButton;
-            this.addMoneyButton.Location = new System.Drawing.Point(379, 151);
+            this.addMoneyButton.Location = new System.Drawing.Point(174, 230);
             this.addMoneyButton.Name = "addMoneyButton";
             this.addMoneyButton.ShadowDecoration.Parent = this.addMoneyButton;
-            this.addMoneyButton.Size = new System.Drawing.Size(87, 29);
+            this.addMoneyButton.Size = new System.Drawing.Size(118, 29);
             this.addMoneyButton.TabIndex = 8;
             this.addMoneyButton.Text = "Add";
             // 
@@ -166,10 +169,10 @@ namespace FS22Companion
             this.setMoneyButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.setMoneyButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.setMoneyButton.HoverState.Parent = this.setMoneyButton;
-            this.setMoneyButton.Location = new System.Drawing.Point(286, 151);
+            this.setMoneyButton.Location = new System.Drawing.Point(174, 195);
             this.setMoneyButton.Name = "setMoneyButton";
             this.setMoneyButton.ShadowDecoration.Parent = this.setMoneyButton;
-            this.setMoneyButton.Size = new System.Drawing.Size(87, 29);
+            this.setMoneyButton.Size = new System.Drawing.Size(240, 29);
             this.setMoneyButton.TabIndex = 7;
             this.setMoneyButton.Text = "Set";
             // 
@@ -191,7 +194,7 @@ namespace FS22Companion
             this.timeScaleTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.timeScaleTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.timeScaleTextBox.HoverState.Parent = this.timeScaleTextBox;
-            this.timeScaleTextBox.Location = new System.Drawing.Point(152, 176);
+            this.timeScaleTextBox.Location = new System.Drawing.Point(152, 205);
             this.timeScaleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.timeScaleTextBox.Name = "timeScaleTextBox";
             this.timeScaleTextBox.PasswordChar = '\0';
@@ -220,7 +223,7 @@ namespace FS22Companion
             this.currentTimeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.currentTimeTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.currentTimeTextBox.HoverState.Parent = this.currentTimeTextBox;
-            this.currentTimeTextBox.Location = new System.Drawing.Point(152, 222);
+            this.currentTimeTextBox.Location = new System.Drawing.Point(152, 251);
             this.currentTimeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.currentTimeTextBox.Name = "currentTimeTextBox";
             this.currentTimeTextBox.PasswordChar = '\0';
@@ -249,7 +252,7 @@ namespace FS22Companion
             this.setTimeScaleButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.setTimeScaleButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.setTimeScaleButton.HoverState.Parent = this.setTimeScaleButton;
-            this.setTimeScaleButton.Location = new System.Drawing.Point(301, 176);
+            this.setTimeScaleButton.Location = new System.Drawing.Point(301, 205);
             this.setTimeScaleButton.Name = "setTimeScaleButton";
             this.setTimeScaleButton.ShadowDecoration.Parent = this.setTimeScaleButton;
             this.setTimeScaleButton.Size = new System.Drawing.Size(135, 29);
@@ -274,7 +277,7 @@ namespace FS22Companion
             this.setTimeButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.setTimeButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.setTimeButton.HoverState.Parent = this.setTimeButton;
-            this.setTimeButton.Location = new System.Drawing.Point(301, 222);
+            this.setTimeButton.Location = new System.Drawing.Point(301, 251);
             this.setTimeButton.Name = "setTimeButton";
             this.setTimeButton.ShadowDecoration.Parent = this.setTimeButton;
             this.setTimeButton.Size = new System.Drawing.Size(135, 29);
@@ -291,7 +294,7 @@ namespace FS22Companion
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(612, 390);
+            this.guna2TabControl1.Size = new System.Drawing.Size(612, 470);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -323,7 +326,7 @@ namespace FS22Companion
             this.moneyTab.Location = new System.Drawing.Point(4, 44);
             this.moneyTab.Name = "moneyTab";
             this.moneyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.moneyTab.Size = new System.Drawing.Size(604, 342);
+            this.moneyTab.Size = new System.Drawing.Size(604, 422);
             this.moneyTab.TabIndex = 0;
             this.moneyTab.Text = "Money";
             // 
@@ -342,14 +345,14 @@ namespace FS22Companion
             this.timeTime.Location = new System.Drawing.Point(4, 44);
             this.timeTime.Name = "timeTime";
             this.timeTime.Padding = new System.Windows.Forms.Padding(3);
-            this.timeTime.Size = new System.Drawing.Size(604, 342);
+            this.timeTime.Size = new System.Drawing.Size(604, 422);
             this.timeTime.TabIndex = 1;
             this.timeTime.Text = "Time";
             // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.label1.Location = new System.Drawing.Point(148, 125);
+            this.label1.Location = new System.Drawing.Point(148, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 29);
             this.label1.TabIndex = 22;
@@ -377,7 +380,7 @@ namespace FS22Companion
             "Autumn",
             "Winter"});
             this.seasonComboBox.ItemsAppearance.Parent = this.seasonComboBox;
-            this.seasonComboBox.Location = new System.Drawing.Point(218, 125);
+            this.seasonComboBox.Location = new System.Drawing.Point(218, 154);
             this.seasonComboBox.Name = "seasonComboBox";
             this.seasonComboBox.ShadowDecoration.Parent = this.seasonComboBox;
             this.seasonComboBox.Size = new System.Drawing.Size(218, 29);
@@ -386,7 +389,7 @@ namespace FS22Companion
             // monthLabel
             // 
             this.monthLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.monthLabel.Location = new System.Drawing.Point(148, 84);
+            this.monthLabel.Location = new System.Drawing.Point(148, 113);
             this.monthLabel.Name = "monthLabel";
             this.monthLabel.Size = new System.Drawing.Size(64, 29);
             this.monthLabel.TabIndex = 20;
@@ -422,7 +425,7 @@ namespace FS22Companion
             "November",
             "December"});
             this.monthComboBox.ItemsAppearance.Parent = this.monthComboBox;
-            this.monthComboBox.Location = new System.Drawing.Point(218, 84);
+            this.monthComboBox.Location = new System.Drawing.Point(218, 113);
             this.monthComboBox.Name = "monthComboBox";
             this.monthComboBox.ShadowDecoration.Parent = this.monthComboBox;
             this.monthComboBox.Size = new System.Drawing.Size(218, 29);
@@ -431,26 +434,148 @@ namespace FS22Companion
             // gpsTab
             // 
             this.gpsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.gpsTab.Controls.Add(this.snapDirectionCheckBox);
+            this.gpsTab.Controls.Add(this.plus270Button);
+            this.gpsTab.Controls.Add(this.plus180Button);
+            this.gpsTab.Controls.Add(this.plus90Button);
             this.gpsTab.Controls.Add(this.gpsActiveButton);
             this.gpsTab.Controls.Add(this.label2);
             this.gpsTab.Controls.Add(this.directionLabel);
             this.gpsTab.Controls.Add(this.isInVehicleButton);
-            this.gpsTab.Controls.Add(this.deactivateGPSButton);
             this.gpsTab.Controls.Add(this.activateGPSButton);
             this.gpsTab.Controls.Add(this.directionTextBox);
             this.gpsTab.Location = new System.Drawing.Point(4, 44);
             this.gpsTab.Name = "gpsTab";
             this.gpsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.gpsTab.Size = new System.Drawing.Size(604, 342);
+            this.gpsTab.Size = new System.Drawing.Size(604, 422);
             this.gpsTab.TabIndex = 2;
             this.gpsTab.Text = "GPS";
+            // 
+            // snapDirectionCheckBox
+            // 
+            this.snapDirectionCheckBox.Animated = true;
+            this.snapDirectionCheckBox.AutoSize = true;
+            this.snapDirectionCheckBox.Checked = true;
+            this.snapDirectionCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.snapDirectionCheckBox.CheckedState.BorderRadius = 0;
+            this.snapDirectionCheckBox.CheckedState.BorderThickness = 0;
+            this.snapDirectionCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.snapDirectionCheckBox.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.snapDirectionCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.snapDirectionCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.snapDirectionCheckBox.Location = new System.Drawing.Point(195, 306);
+            this.snapDirectionCheckBox.Name = "snapDirectionCheckBox";
+            this.snapDirectionCheckBox.Size = new System.Drawing.Size(206, 17);
+            this.snapDirectionCheckBox.TabIndex = 20;
+            this.snapDirectionCheckBox.Text = "Snap GPS Direction every 90 degrees";
+            this.snapDirectionCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.snapDirectionCheckBox.UncheckedState.BorderRadius = 0;
+            this.snapDirectionCheckBox.UncheckedState.BorderThickness = 0;
+            this.snapDirectionCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // plus270Button
+            // 
+            this.plus270Button.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus270Button.BorderRadius = 7;
+            this.plus270Button.BorderThickness = 1;
+            this.plus270Button.CheckedState.Parent = this.plus270Button;
+            this.plus270Button.CustomImages.Parent = this.plus270Button;
+            this.plus270Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.plus270Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.plus270Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.plus270Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.plus270Button.DisabledState.Parent = this.plus270Button;
+            this.plus270Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.plus270Button.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.plus270Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus270Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus270Button.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.plus270Button.HoverState.Parent = this.plus270Button;
+            this.plus270Button.Location = new System.Drawing.Point(336, 260);
+            this.plus270Button.Name = "plus270Button";
+            this.plus270Button.ShadowDecoration.Parent = this.plus270Button;
+            this.plus270Button.Size = new System.Drawing.Size(68, 29);
+            this.plus270Button.TabIndex = 19;
+            this.plus270Button.Text = "+270";
+            // 
+            // plus180Button
+            // 
+            this.plus180Button.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus180Button.BorderRadius = 7;
+            this.plus180Button.BorderThickness = 1;
+            this.plus180Button.CheckedState.Parent = this.plus180Button;
+            this.plus180Button.CustomImages.Parent = this.plus180Button;
+            this.plus180Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.plus180Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.plus180Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.plus180Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.plus180Button.DisabledState.Parent = this.plus180Button;
+            this.plus180Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.plus180Button.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.plus180Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus180Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus180Button.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.plus180Button.HoverState.Parent = this.plus180Button;
+            this.plus180Button.Location = new System.Drawing.Point(262, 260);
+            this.plus180Button.Name = "plus180Button";
+            this.plus180Button.ShadowDecoration.Parent = this.plus180Button;
+            this.plus180Button.Size = new System.Drawing.Size(68, 29);
+            this.plus180Button.TabIndex = 18;
+            this.plus180Button.Text = "+180";
+            // 
+            // plus90Button
+            // 
+            this.plus90Button.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus90Button.BorderRadius = 7;
+            this.plus90Button.BorderThickness = 1;
+            this.plus90Button.CheckedState.Parent = this.plus90Button;
+            this.plus90Button.CustomImages.Parent = this.plus90Button;
+            this.plus90Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.plus90Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.plus90Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.plus90Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.plus90Button.DisabledState.Parent = this.plus90Button;
+            this.plus90Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.plus90Button.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.plus90Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus90Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
+            this.plus90Button.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.plus90Button.HoverState.Parent = this.plus90Button;
+            this.plus90Button.Location = new System.Drawing.Point(187, 260);
+            this.plus90Button.Name = "plus90Button";
+            this.plus90Button.ShadowDecoration.Parent = this.plus90Button;
+            this.plus90Button.Size = new System.Drawing.Size(68, 29);
+            this.plus90Button.TabIndex = 17;
+            this.plus90Button.Text = "+90";
+            // 
+            // gpsActiveButton
+            // 
+            this.gpsActiveButton.AutoRoundedCorners = true;
+            this.gpsActiveButton.BorderRadius = 11;
+            this.gpsActiveButton.CheckedState.Parent = this.gpsActiveButton;
+            this.gpsActiveButton.CustomImages.Parent = this.gpsActiveButton;
+            this.gpsActiveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.gpsActiveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.gpsActiveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.gpsActiveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.gpsActiveButton.DisabledState.Parent = this.gpsActiveButton;
+            this.gpsActiveButton.FillColor = System.Drawing.Color.Gainsboro;
+            this.gpsActiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gpsActiveButton.ForeColor = System.Drawing.Color.Black;
+            this.gpsActiveButton.HoverState.Parent = this.gpsActiveButton;
+            this.gpsActiveButton.Location = new System.Drawing.Point(297, 80);
+            this.gpsActiveButton.Name = "gpsActiveButton";
+            this.gpsActiveButton.ShadowDecoration.Parent = this.gpsActiveButton;
+            this.gpsActiveButton.Size = new System.Drawing.Size(105, 25);
+            this.gpsActiveButton.TabIndex = 16;
+            this.gpsActiveButton.Text = "gpsActive";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.label2.Location = new System.Drawing.Point(181, 176);
+            this.label2.Location = new System.Drawing.Point(183, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 21);
             this.label2.TabIndex = 15;
@@ -461,7 +586,7 @@ namespace FS22Companion
             this.directionLabel.AutoSize = true;
             this.directionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.directionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.directionLabel.Location = new System.Drawing.Point(181, 125);
+            this.directionLabel.Location = new System.Drawing.Point(183, 122);
             this.directionLabel.Name = "directionLabel";
             this.directionLabel.Size = new System.Drawing.Size(133, 21);
             this.directionLabel.TabIndex = 14;
@@ -482,37 +607,12 @@ namespace FS22Companion
             this.isInVehicleButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.isInVehicleButton.ForeColor = System.Drawing.Color.Black;
             this.isInVehicleButton.HoverState.Parent = this.isInVehicleButton;
-            this.isInVehicleButton.Location = new System.Drawing.Point(185, 83);
+            this.isInVehicleButton.Location = new System.Drawing.Point(187, 80);
             this.isInVehicleButton.Name = "isInVehicleButton";
             this.isInVehicleButton.ShadowDecoration.Parent = this.isInVehicleButton;
             this.isInVehicleButton.Size = new System.Drawing.Size(105, 25);
             this.isInVehicleButton.TabIndex = 12;
             this.isInVehicleButton.Text = "isInVehicle";
-            // 
-            // deactivateGPSButton
-            // 
-            this.deactivateGPSButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.deactivateGPSButton.BorderRadius = 7;
-            this.deactivateGPSButton.BorderThickness = 1;
-            this.deactivateGPSButton.CheckedState.Parent = this.deactivateGPSButton;
-            this.deactivateGPSButton.CustomImages.Parent = this.deactivateGPSButton;
-            this.deactivateGPSButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deactivateGPSButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deactivateGPSButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deactivateGPSButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deactivateGPSButton.DisabledState.Parent = this.deactivateGPSButton;
-            this.deactivateGPSButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.deactivateGPSButton.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.deactivateGPSButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.deactivateGPSButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
-            this.deactivateGPSButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.deactivateGPSButton.HoverState.Parent = this.deactivateGPSButton;
-            this.deactivateGPSButton.Location = new System.Drawing.Point(303, 218);
-            this.deactivateGPSButton.Name = "deactivateGPSButton";
-            this.deactivateGPSButton.ShadowDecoration.Parent = this.deactivateGPSButton;
-            this.deactivateGPSButton.Size = new System.Drawing.Size(97, 29);
-            this.deactivateGPSButton.TabIndex = 10;
-            this.deactivateGPSButton.Text = "Dectivate";
             // 
             // activateGPSButton
             // 
@@ -532,10 +632,10 @@ namespace FS22Companion
             this.activateGPSButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.activateGPSButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.activateGPSButton.HoverState.Parent = this.activateGPSButton;
-            this.activateGPSButton.Location = new System.Drawing.Point(185, 218);
+            this.activateGPSButton.Location = new System.Drawing.Point(187, 215);
             this.activateGPSButton.Name = "activateGPSButton";
             this.activateGPSButton.ShadowDecoration.Parent = this.activateGPSButton;
-            this.activateGPSButton.Size = new System.Drawing.Size(97, 29);
+            this.activateGPSButton.Size = new System.Drawing.Size(217, 29);
             this.activateGPSButton.TabIndex = 9;
             this.activateGPSButton.Text = "Activate";
             // 
@@ -557,7 +657,7 @@ namespace FS22Companion
             this.directionTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.directionTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.directionTextBox.HoverState.Parent = this.directionTextBox;
-            this.directionTextBox.Location = new System.Drawing.Point(303, 174);
+            this.directionTextBox.Location = new System.Drawing.Point(305, 171);
             this.directionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.directionTextBox.Name = "directionTextBox";
             this.directionTextBox.PasswordChar = '\0';
@@ -578,34 +678,12 @@ namespace FS22Companion
             this.isInVehicleTimer.Enabled = true;
             this.isInVehicleTimer.Interval = 500;
             // 
-            // gpsActiveButton
-            // 
-            this.gpsActiveButton.AutoRoundedCorners = true;
-            this.gpsActiveButton.BorderRadius = 11;
-            this.gpsActiveButton.CheckedState.Parent = this.gpsActiveButton;
-            this.gpsActiveButton.CustomImages.Parent = this.gpsActiveButton;
-            this.gpsActiveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.gpsActiveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.gpsActiveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.gpsActiveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.gpsActiveButton.DisabledState.Parent = this.gpsActiveButton;
-            this.gpsActiveButton.FillColor = System.Drawing.Color.Gainsboro;
-            this.gpsActiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gpsActiveButton.ForeColor = System.Drawing.Color.Black;
-            this.gpsActiveButton.HoverState.Parent = this.gpsActiveButton;
-            this.gpsActiveButton.Location = new System.Drawing.Point(295, 83);
-            this.gpsActiveButton.Name = "gpsActiveButton";
-            this.gpsActiveButton.ShadowDecoration.Parent = this.gpsActiveButton;
-            this.gpsActiveButton.Size = new System.Drawing.Size(105, 25);
-            this.gpsActiveButton.TabIndex = 16;
-            this.gpsActiveButton.Text = "gpsActive";
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(612, 390);
+            this.ClientSize = new System.Drawing.Size(612, 470);
             this.Controls.Add(this.guna2TabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -638,8 +716,6 @@ namespace FS22Companion
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox seasonComboBox;
         private System.Windows.Forms.Label monthLabel;
-        private Guna.UI2.WinForms.Guna2Button deactivateGPSButton;
-        private Guna.UI2.WinForms.Guna2Button activateGPSButton;
         private Guna.UI2.WinForms.Guna2TextBox directionTextBox;
         public Guna.UI2.WinForms.Guna2Button isInVehicleButton;
         private System.Windows.Forms.Timer gpsTimer;
@@ -647,5 +723,10 @@ namespace FS22Companion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer isInVehicleTimer;
         public Guna.UI2.WinForms.Guna2Button gpsActiveButton;
+        private Guna.UI2.WinForms.Guna2Button plus270Button;
+        private Guna.UI2.WinForms.Guna2Button plus180Button;
+        private Guna.UI2.WinForms.Guna2Button plus90Button;
+        public Guna.UI2.WinForms.Guna2Button activateGPSButton;
+        private Guna.UI2.WinForms.Guna2CheckBox snapDirectionCheckBox;
     }
 }

@@ -127,8 +127,15 @@ Menu:
   - Set Season, Month, Time Scale and the Current Time
   - GPS (keep your tractor aligned)
 
+Game Settings Manager:
+  - Create presets for game settings, with custom mod folders
+
 Table:
-  - Check the best prices for your crops/products</value>
+  - Check the best prices for your crops/products
+
+Hotkeys:
+  - Ins - Bring to top of screen (put the game in Windowed Mode)
+  - Ctrl + Q - Toggle GPS</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

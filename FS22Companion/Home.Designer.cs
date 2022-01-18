@@ -32,9 +32,10 @@ namespace FS22Companion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.label1 = new System.Windows.Forms.Label();
             this.gameStatusButton = new Guna.UI2.WinForms.Guna2Button();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.githubButton = new Guna.UI2.WinForms.Guna2Button();
             this.discordButton = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@ namespace FS22Companion
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
             this.label1.Location = new System.Drawing.Point(26, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(460, 231);
+            this.label1.Size = new System.Drawing.Size(460, 378);
             this.label1.TabIndex = 1;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -64,26 +65,12 @@ namespace FS22Companion
             this.gameStatusButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gameStatusButton.ForeColor = System.Drawing.Color.Black;
             this.gameStatusButton.HoverState.Parent = this.gameStatusButton;
-            this.gameStatusButton.Location = new System.Drawing.Point(12, 353);
+            this.gameStatusButton.Location = new System.Drawing.Point(12, 434);
             this.gameStatusButton.Name = "gameStatusButton";
             this.gameStatusButton.ShadowDecoration.Parent = this.gameStatusButton;
             this.gameStatusButton.Size = new System.Drawing.Size(122, 25);
             this.gameStatusButton.TabIndex = 2;
             this.gameStatusButton.Text = "gameStatus";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Tractor;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 78;
-            this.iconPictureBox1.Location = new System.Drawing.Point(520, 317);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(80, 78);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
             // 
             // githubButton
             // 
@@ -104,7 +91,7 @@ namespace FS22Companion
             this.githubButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.githubButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.githubButton.HoverState.Parent = this.githubButton;
-            this.githubButton.Location = new System.Drawing.Point(342, 349);
+            this.githubButton.Location = new System.Drawing.Point(360, 430);
             this.githubButton.Name = "githubButton";
             this.githubButton.ShadowDecoration.Parent = this.githubButton;
             this.githubButton.Size = new System.Drawing.Size(144, 29);
@@ -130,7 +117,7 @@ namespace FS22Companion
             this.discordButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(187)))), ((int)(((byte)(223)))));
             this.discordButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
             this.discordButton.HoverState.Parent = this.discordButton;
-            this.discordButton.Location = new System.Drawing.Point(192, 349);
+            this.discordButton.Location = new System.Drawing.Point(210, 430);
             this.discordButton.Name = "discordButton";
             this.discordButton.ShadowDecoration.Parent = this.discordButton;
             this.discordButton.Size = new System.Drawing.Size(144, 29);
@@ -138,12 +125,38 @@ namespace FS22Companion
             this.discordButton.Text = "Join Discord";
             this.discordButton.Click += new System.EventHandler(this.discordButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
+            this.label2.Location = new System.Drawing.Point(146, 434);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "v1.1.0";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Tractor;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(194)))), ((int)(((byte)(243)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 78;
+            this.iconPictureBox1.Location = new System.Drawing.Point(520, 395);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(80, 78);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(47)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(612, 390);
+            this.ClientSize = new System.Drawing.Size(612, 470);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.githubButton);
             this.Controls.Add(this.discordButton);
             this.Controls.Add(this.gameStatusButton);
@@ -166,5 +179,6 @@ namespace FS22Companion
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button githubButton;
         private Guna.UI2.WinForms.Guna2Button discordButton;
+        public System.Windows.Forms.Label label2;
     }
 }

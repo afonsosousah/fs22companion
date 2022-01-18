@@ -44,7 +44,7 @@ namespace FS22Companion
             }
             else
             {
-                this.Width = (int)sizeOfString.Width + 40;
+                this.Width = (int)sizeOfString.Width + 50;
                 label1.Width = this.Width;
             }
 
