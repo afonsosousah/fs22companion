@@ -10,6 +10,8 @@ This little app can improve your gameplay experience by allowing you to:
 - Manage your money (add and remove) 
 - Change Time Scale, Time of Day, Seasons and Months 
 - Keep aligned to a direction (like GPS Mod and works on server even without the mod!)
+- Check the product prices
+- Create presets for Game Settings (new)
 
 # Showcase
 
